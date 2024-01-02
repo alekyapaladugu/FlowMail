@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <title>Template Inputs</title>
+
+  <!-- Office JavaScript API -->
+  <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
+
+  <!-- For more information on Fluent UI, visit https://developer.microsoft.com/fluentui. -->
+  <link rel="stylesheet"
+    href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.6.1/css/fabric.min.css" />
+
+  <!-- Template styles -->
+  <link href="assignmentQuestion.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="ms-font-l">
+  <main>
+    <section class="ms-font-m ms-fontColor-neutralPrimary">
+      <div class="ms-font-xxl dialog-heading">Template Inputs</div>
+      <form name="assignment-template-form" id="template-form" onsubmit="validateForm()">
+        <div class="ms-Grid">
+          <div class="ms-Grid-row">
+            <div class="ms-TextField">
+              <label class="ms-Label">Professor Name</label>
+              <input class="ms-TextField-field" id="professor-name" type="text" value="" placeholder="@Professor Name">
+            </div>
+          </div>
+          <div class="ms-Grid-row">
+            <div class="ms-TextField">
+              <label class="ms-Label">Course Number</label>
+              <input class="ms-TextField-field" id="course-no" type="text" value="" placeholder="@Course Number">
+            </div>
+          </div>
+          <div class="ms-Grid-row">
+            <div class="ms-TextField">
+              <label class="ms-Label">Assigment Question</label>
+              <textarea class="ms-TextField-field" id="assignment-question-content" type="text" value=""
+                placeholder="@Question for the Professor"> </textarea>
+            </div>
+          </div>
+          <div class="ms-Grid-row">
+            <div class="ms-TextField">
+              <label class="ms-Label">Student Id</label>
+              <input class="ms-TextField-field" id="student-id" type="text" value="" placeholder="@Student Id">
+            </div>
+          </div>
+          <div class="ms-Grid-row">
+            <div class="ms-TextField">
+              <label class="ms-Label">Student Name</label>
+              <input class="ms-TextField-field" id="student-name" type="text" value="" placeholder="@Student Name">
+            </div>
+          </div>
+        </div>
+        <div class="ms-Dialog-actions">
+          <div class="ms-Dialog-actionsRight">
+            <button type="submit" class="ms-Dialog-action ms-Button ms-Button--primary" for="template-form"
+              id="settings-icon">
+              <span class="ms-Button-label">Done</span>
+            </button>
+          </div>
+        </div>
+      </form>
+
+    </section>
+  </main>
+  <script type="text/javascript" src="./assignmentQuestion.js"></script>
+</body>
+
+</html>

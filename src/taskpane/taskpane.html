@@ -1,0 +1,63 @@
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT License. -->
+<!-- This file shows how to design a first-run page that provides a welcome screen to the user about the features of the add-in. -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FlowMail Add-in</title>
+
+  <!-- Office JavaScript API -->
+  <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
+
+  <!-- For more information on Fluent UI, visit https://developer.microsoft.com/fluentui#/. -->
+  <link rel="stylesheet"
+    href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/11.0.0/css/fabric.min.css" />
+
+  <!-- Template styles -->
+  <link href="taskpane.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="ms-font-m ms-welcome ms-Fabric">
+  <main class="ms-landing-page__main">
+    <section class="ms-landing-page__content ms-font-m ms-fontColor-neutralPrimary">
+      <h2> Select a Template:</h2>
+      <div id="template-list-container" style="display: none;">
+        <div w3-include-html="../../src/email_templates/assignmentQuestion/assignmentQuestion.html"></div>
+        <form>
+          <div id="template-list">
+            <div class="template-block">
+              <p class="template-heading"> Assignment Question Template</p>
+              <div class="template-image">
+                <input type="radio" class="radio-btn" id="assignment-temp" value="assignment-temp"
+                  onchange="enableInsertBtn()">
+                <img src="../../assets/assignment_temp.svg">
+              </div>
+            </div>
+            <div class="template-content" id="assignment-temp-content" style="display: none;">
+              <p> Dear Professor <span id="professor-name"></span>,</p>
+              <br>
+              <p> I am in your class <span id="course-no"></span>
+                course and have a question about <span id="assignment-name"></span></p>
+              <p id="assignment-question"></p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+    <div class="insert-btn-block">
+      <button class="ms-Button ms-Button--primary" id="insert-button" tabindex=0 disabled>
+        <span class="ms-Button-label">Insert</span>
+      </button>
+    </div>
+  </main>
+  <script type="text/javascript" src="taskpane.js"></script>
+  <script type="text/javascript" src="../../node_modules/jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="../../node_modules/showdown/dist/showdown.min.js"></script>
+  <script type="text/javascript" src="../../node_modules/urijs/src/URI.min.js"></script>
+</body>
+
+</html>

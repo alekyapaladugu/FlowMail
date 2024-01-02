@@ -1,0 +1,48 @@
+.ms-Grid-row {
+    padding: 5px;
+    margin: 0;
+}
+
+.ms-Label {
+    display: block;
+    font-weight: 600;
+    padding-bottom: 5px;
+}
+
+.ms-TextField-field {
+    padding: 5px;
+    width: 100%;
+}
+
+body {
+    font-family: 'Segoe UI Web (West European)', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif;
+}
+
+.dialog-heading {
+    font-weight: 600;
+    margin: 10px;
+}
+
+.ms-Dialog-actions {
+    padding: 10px;
+}
+
+.ms-Button {
+    width: 50%;
+    border-radius: 5px;
+    height: 30px;
+}
+
+.ms-Dialog-actionsRight {
+    display: flex;
+    justify-content: center;
+}
+
+.ms-Button--primary {
+    width: 30%;
+    background-color: #005ca4;
+    color: white;
+    border-radius: 4px;
+    padding: 5px;
+    cursor: pointer;
+}
