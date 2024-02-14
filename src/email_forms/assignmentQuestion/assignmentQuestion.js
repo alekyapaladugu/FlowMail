@@ -18,7 +18,8 @@
     let data = {}
     data.professorName = document.forms["assignment-template-form"]["professor-name"].value
     data.courseNumber = document.forms["assignment-template-form"]["course-no"].value
-    data.assignmentNo = document.forms["assignment-template-form"]["assignment-question-content"].value
+    data.assignmentName = document.forms["assignment-template-form"]["assignment-name"].value
+    data.assignmentQuestion = document.forms["assignment-template-form"]["assignment-question-content"].value
     data.studentId = document.forms["assignment-template-form"]["student-id"].value
     data.studentName = document.forms["assignment-template-form"]["student-name"].value
 

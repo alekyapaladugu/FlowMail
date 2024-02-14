@@ -12,12 +12,14 @@
 
   <!-- Office JavaScript API -->
   <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
+  <script type="text/javascript" src="../../node_modules/jquery/dist/jquery.js"></script>
 
   <!-- For more information on Fluent UI, visit https://developer.microsoft.com/fluentui#/. -->
   <link rel="stylesheet"
     href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/11.0.0/css/fabric.min.css" />
 
   <!-- Template styles -->
+  <link href="../../assets/styles/global.css" rel="stylesheet" type="text/css" />
   <link href="taskpane.css" rel="stylesheet" type="text/css" />
 </head>
 
@@ -26,15 +28,33 @@
     <section class="ms-landing-page__content ms-font-m ms-fontColor-neutralPrimary">
       <h2> Select a Template:</h2>
       <div id="template-list-container" style="display: none;">
-        <div w3-include-html="../../src/email_templates/assignmentQuestion/assignmentQuestion.html"></div>
         <form>
           <div id="template-list">
             <div class="template-block">
               <p class="template-heading"> Assignment Question Template</p>
               <div class="template-image">
-                <input type="radio" class="radio-btn" id="assignment-temp" value="assignment-temp"
-                  onchange="enableInsertBtn()">
+                <input type="radio" class="radio-btn" name="assignment-temp" value="assignment-temp-1">
                 <img src="../../assets/assignment_temp.svg">
+              </div>
+              <p class="template-heading"> Grading Query Template</p>
+              <div class="template-image">
+                <input type="radio" class="radio-btn" name="assignment-temp" value="assignment-temp-2">
+                <img src="../../assets/grading_query.svg">
+              </div>
+              <p class="template-heading"> Crash Course Template</p>
+              <div class="template-image">
+                <input type="radio" class="radio-btn" name="assignment-temp" value="assignment-temp-3">
+                <img src="../../assets/crash_course.svg">
+              </div>
+              <p class="template-heading"> Late Submission Template</p>
+              <div class="template-image">
+                <input type="radio" class="radio-btn" name="assignment-temp" value="assignment-temp-4">
+                <img src="../../assets/late_submission.svg">
+              </div>
+              <p class="template-heading"> Topic Clarification Template</p>
+              <div class="template-image">
+                <input type="radio" class="radio-btn" name="assignment-temp" value="assignment-temp-5">
+                <img src="../../assets/topic_clarification.svg">
               </div>
             </div>
             <div class="template-content" id="assignment-temp-content" style="display: none;">
@@ -43,19 +63,26 @@
               <p> I am in your class <span id="course-no"></span>
                 course and have a question about <span id="assignment-name"></span></p>
               <p id="assignment-question"></p>
+              <br><br>
+              <p> Thank you,
+                <br>
+                <span id="student-name" style="margin: 0;"></span>
+                <br>
+                <span>Student ID: <span id="student-id"></span></span>
+              </p>
             </div>
           </div>
         </form>
       </div>
     </section>
     <div class="insert-btn-block">
-      <button class="ms-Button ms-Button--primary" id="insert-button" tabindex=0 disabled>
+      <button type="button" class="ms-Button ms-Button--primary" id="insert-button" tabindex=0 disabled>
         <span class="ms-Button-label">Insert</span>
       </button>
     </div>
   </main>
   <script type="text/javascript" src="taskpane.js"></script>
-  <script type="text/javascript" src="../../node_modules/jquery/dist/jquery.js"></script>
+  
   <script type="text/javascript" src="../../node_modules/showdown/dist/showdown.min.js"></script>
   <script type="text/javascript" src="../../node_modules/urijs/src/URI.min.js"></script>
 </body>

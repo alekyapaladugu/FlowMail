@@ -30,7 +30,7 @@
       "type": "msedge",
       "request": "attach",
       "port": 9229,
-      "timeout": 600000,
+      "timeout": 450000,
       "webRoot": "${workspaceRoot}",
       "preLaunchTask": "Debug: Outlook Desktop",
       "postDebugTask": "Stop Debug"

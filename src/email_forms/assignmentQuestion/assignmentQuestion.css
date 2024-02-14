@@ -1,0 +1,16 @@
+html {
+    background: #DBEFD9;
+}
+.dialog-heading {
+    font-weight: 600;
+    margin: 10px;
+}
+
+.ms-Dialog-actions {
+    padding: 10px;
+}
+
+.ms-Dialog-actionsRight {
+    display: flex;
+    justify-content: center;
+}
