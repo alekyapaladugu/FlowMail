@@ -1,7 +1,6 @@
 <!-- Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT License. -->
 <!-- This file shows how to design a first-run page that provides a welcome screen to the user about the features of the add-in. -->
 
-<!DOCTYPE html>
 <html>
 
 <head>
@@ -33,43 +32,32 @@
             <div class="template-block">
               <p class="template-heading"> Assignment Question Template</p>
               <div class="template-image">
-                <input type="radio" class="radio-btn" name="assignment-temp" value="assignment-temp-1">
+                <input type="radio" class="radio-btn" name="email-template" value="template-1">
                 <img src="../../assets/assignment_temp.svg">
               </div>
               <p class="template-heading"> Grading Query Template</p>
               <div class="template-image">
-                <input type="radio" class="radio-btn" name="assignment-temp" value="assignment-temp-2">
+                <input type="radio" class="radio-btn" name="email-template" value="template-2">
                 <img src="../../assets/grading_query.svg">
               </div>
               <p class="template-heading"> Crash Course Template</p>
               <div class="template-image">
-                <input type="radio" class="radio-btn" name="assignment-temp" value="assignment-temp-3">
+                <input type="radio" class="radio-btn" name="email-template" value="template-3">
                 <img src="../../assets/crash_course.svg">
               </div>
               <p class="template-heading"> Late Submission Template</p>
               <div class="template-image">
-                <input type="radio" class="radio-btn" name="assignment-temp" value="assignment-temp-4">
+                <input type="radio" class="radio-btn" name="email-template" value="template-4">
                 <img src="../../assets/late_submission.svg">
               </div>
               <p class="template-heading"> Topic Clarification Template</p>
               <div class="template-image">
-                <input type="radio" class="radio-btn" name="assignment-temp" value="assignment-temp-5">
+                <input type="radio" class="radio-btn" name="email-template" value="template-5">
                 <img src="../../assets/topic_clarification.svg">
               </div>
             </div>
-            <div class="template-content" id="assignment-temp-content" style="display: none;">
-              <p> Dear Professor <span id="professor-name"></span>,</p>
-              <br>
-              <p> I am in your class <span id="course-no"></span>
-                course and have a question about <span id="assignment-name"></span></p>
-              <p id="assignment-question"></p>
-              <br><br>
-              <p> Thank you,
-                <br>
-                <span id="student-name" style="margin: 0;"></span>
-                <br>
-                <span>Student ID: <span id="student-id"></span></span>
-              </p>
+            <div class="template-content" id="template-content" style="display: none;">
+              <div id="error"></div>
             </div>
           </div>
         </form>

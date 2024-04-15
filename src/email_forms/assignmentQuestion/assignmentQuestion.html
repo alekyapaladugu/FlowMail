@@ -16,6 +16,13 @@
   <!-- Template styles -->
   <link href="../../../assets/styles/global.css" rel="stylesheet" type="text/css" />
   <link href="assignmentQuestion.css" rel="stylesheet" type="text/css" />
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <!-- jQuery UI library -->
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
 </head>
 
 <body class="ms-font-l">
@@ -24,34 +31,69 @@
       <div class="ms-font-xxl dialog-heading">Template Inputs</div>
       <form name="assignment-template-form" id="template-form" onsubmit="validateForm()">
         <div class="ms-Grid">
-          <div class="ms-Grid-row">
-            <div class="ms-TextField">
-              <label class="ms-Label">Course Number</label>
-              <input class="ms-TextField-field" id="course-no" type="text" value="" placeholder="@Course Number" required>
-            </div>
-          </div>
-          <div class="ms-Grid-row">
+          <div class="ms-Grid-row" id="professor-choice">
             <div class="ms-TextField">
               <label class="ms-Label">Select the Professor</label>
-              <select class="ms-TextField-field dialog-select" id="professor-name" required>
+              <select class="ms-TextField-field dialog-select" id="professor-name" onchange="professorNameChange(event)"
+                required>
                 <option value="" disabled selected>Select Professor</option>
-                <option value="professor1">Professor 1</option>
-                <option value="professor2">Professor 2</option>
-                <option value="professor3">Professor 3</option>
               </select>
             </div>
           </div>
-          <div class="ms-Grid-row">
+          <div class="ms-Grid-row" id="course-choice">
             <div class="ms-TextField">
-              <label class="ms-Label">Assigment Name</label>
-              <input class="ms-TextField-field" id="assignment-name" type="text" value="" placeholder="@Assignment Name" required>
+              <label class="ms-Label">Course Number</label>
+              <select class="ms-TextField-field dialog-select" id="course-no" required>
+                <option value="" disabled selected>Select Course Number</option>
+              </select>
             </div>
           </div>
-          <div class="ms-Grid-row">
+          <div class="ms-Grid-row hide" id="onbase-input">
+            <div class="ms-TextField">
+              <label class="ms-Label">OnBase Number</label>
+              <input class="ms-TextField-field" id="onbase-number" type="text" value="" placeholder="@OnBase Number">
+            </div>
+          </div>
+          <div class="ms-Grid-row hide" id="assignment-name-input">
+            <div class="ms-TextField">
+              <label class="ms-Label">Assigment Name</label>
+              <input class="ms-TextField-field" name="assignmentName" id="assignment-name" type="text" value=""
+                placeholder="@Assignment Name">
+            </div>
+          </div>
+          <div class="ms-Grid-row hide" id="assignment-question-input">
             <div class="ms-TextField">
               <label class="ms-Label">Assigment Question</label>
               <textarea class="ms-TextField-field" id="assignment-question-content" type="text" value=""
-                placeholder="@Question for the Professor" required> </textarea>
+                placeholder="@Question for the Professor"></textarea>
+            </div>
+          </div>
+          <div class="ms-Grid-row hide" id="extension-date-input">
+            <div class="ms-TextField">
+              <label class="ms-Label">Assigment Extension Date</label>
+              <input type="text" class="ms-TextField-field" name="assignment-extension" id="assignment-extension-date"
+                value="">
+            </div>
+          </div>
+          <div class="ms-Grid-row hide" id="extension-reason">
+            <div class="ms-TextField">
+              <label class="ms-Label">Assigment Extension Reason</label>
+              <textarea type="text" class="ms-TextField-field" name="assignment-extension-reason"
+                id="assignment-extension-reason" value="" placeholder="@Assignment Extension Reason"></textarea>
+            </div>
+          </div>
+          <div class="ms-Grid-row hide" id="clarification-topic-block">
+            <div class="ms-TextField">
+              <label class="ms-Label">Topic Name</label>
+              <input type="text" class="ms-TextField-field" name="topic-clarification" id="topic-clarification"
+                value="">
+            </div>
+          </div>
+          <div class="ms-Grid-row hide" id="topic-quesion-block">
+            <div class="ms-TextField">
+              <label class="ms-Label">Topic Clarification Question</label>
+              <textarea type="text" class="ms-TextField-field" name="topic-quesion"
+                id="topic-quesion" value="" placeholder="@Question on Topic"></textarea>
             </div>
           </div>
           <div class="ms-Grid-row">
@@ -63,7 +105,8 @@
           <div class="ms-Grid-row">
             <div class="ms-TextField">
               <label class="ms-Label">Student Name</label>
-              <input class="ms-TextField-field" id="student-name" type="text" value="" placeholder="@Student Name" required>
+              <input class="ms-TextField-field" id="student-name" type="text" value="" placeholder="@Student Name"
+                required>
             </div>
           </div>
         </div>

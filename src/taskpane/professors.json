@@ -1,0 +1,77 @@
+{
+    "professors": [
+      {
+        "name": "Mikaela Huang",
+        "courses": ["CSC 200"]
+      },
+      {
+        "name": "Bill Mitchell",
+        "courses": ["CSC 204"]
+      },
+      {
+        "name": "Manish Gajjar",
+        "courses": ["CSC 205"]
+      },
+      {
+        "name": "Parham Phoulady",
+        "courses": ["CSC 206", "CSC 502", "CSC 502C"]
+      },
+      {
+        "name": "Mamoun Abu-Samaha",
+        "courses": ["CSC 215", "CSC 252", "CSC 254"]
+      },
+      {
+        "name": "Anna Baynes",
+        "courses": ["CSC 238", "CSC 290", "CSC 502", "CSC 502C"]
+      },
+      {
+        "name": "Jagat Shah",
+        "courses": ["CSC 242"]
+      },
+      {
+        "name": "Ying Jin",
+        "courses": ["CSC 290", "CSC 299", "CSC 502", "CSC 502C"]
+      },
+      {
+        "name": "Ahmed Salem",
+        "courses": ["CSC 290", "CSC 500C"]
+      },
+      {
+        "name": "Kin Chung Kwan",
+        "courses": ["CSC 290", "CSC 299", "CSC 502", "CSC 502C"]
+      },
+      {
+        "name": "Jinsong Ouyang",
+        "courses": ["CSC 295", "CSC 502", "CSC 502C"]
+      },
+      {
+        "name": "Haiquan Chen",
+        "courses": ["CSC 500C", "CSC 502", "CSC 502C"]
+      },
+      {
+        "name": "Syed Badruddoja",
+        "courses": ["CSC 502", "CSC 502C"]
+      },
+      {
+        "name": "Bang Tran",
+        "courses": ["CSC 290", "CSC 502", "CSC 502C"]
+      },
+      {
+        "name": "Ted Krovetz",
+        "courses": ["CSC 290", "CSC 502", "CSC 502C"]
+      },
+      {
+        "name": "Mahyar Zarghami",
+        "courses": ["CSC 299"]
+      },
+      {
+        "name": "Ghassan Shobaki",
+        "courses": ["CSC 502"]
+      },
+      {
+        "name": "Scott Gordon",
+        "courses": ["CSC 502C"]
+      }
+    ]
+  }
+  

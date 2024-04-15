@@ -20,7 +20,6 @@ module.exports = async (env, options) => {
       polyfill: ["core-js/stable", "regenerator-runtime/runtime"],
       taskpane: ["./src/taskpane/taskpane.js", "./src/taskpane/taskpane.html"],
       commands: "./src/commands/commands.js",
-      assignmentQuestion: ["./src/email_forms/assignmentQuestion/assignmentQuestion.js", "./src/email_forms/assignmentQuestion/assignmentQuestion.html"]
     },
     output: {
       clean: true,
@@ -63,13 +62,21 @@ module.exports = async (env, options) => {
       new CopyWebpackPlugin({
         patterns: [
           {
+            from: './src/taskpane/professors.json', // Adjust the path to your JSON file
+            to: 'professors.json' // Adjust the destination path
+          }
+        ]
+      }),
+      new CopyWebpackPlugin({
+        patterns: [
+          {
             from: "assets/*",
             to: "assets/[name][ext][query]",
           },
-          {
-            from: "./src/email_forms/assignmentQuestion/assignmentQuestion.css",
-            to: "assignmentQuestion.css",
-          },
+          // {
+          //   from: "./src/email_forms/assignmentQuestion/assignmentQuestion.css",
+          //   to: "assignmentQuestion.css",
+          // },
           {
             from: "manifest*.xml",
             to: "[name]" + "[ext]",
@@ -92,7 +99,32 @@ module.exports = async (env, options) => {
         filename: "assignmentQuestion.html",
         template: "./src/email_forms/assignmentQuestion/assignmentQuestion.html",
         chunks: ["polyfill", "assignmentQuestion"]
-      })
+      }),
+      new HtmlWebpackPlugin({
+        filename: "assignmentQuestionTemplate.html",
+        template: "./src/email_templates/assignmentQuestionTemplate.html",
+        chunks: ["polyfill", "assignmentQuestionTemplate"]
+      }),
+      new HtmlWebpackPlugin({
+        filename: "gradingQueryTemplate.html",
+        template: "./src/email_templates/gradingQueryTemplate.html",
+        chunks: ["polyfill", "gradingQueryTemplate"]
+      }),
+      new HtmlWebpackPlugin({
+        filename: "crashCourseTemplate.html",
+        template: "./src/email_templates/crashCourseTemplate.html",
+        chunks: ["polyfill", "crashCourseTemplate"]
+      }),
+      new HtmlWebpackPlugin({
+        filename: "lateSubmissionTemplate.html",
+        template: "./src/email_templates/lateSubmissionTemplate.html",
+        chunks: ["polyfill", "lateSubmissionTemplate"]
+      }), 
+      new HtmlWebpackPlugin({
+        filename: "topicClarification.html",
+        template: "./src/email_templates/topicClarification.html",
+        chunks: ["polyfill", "topicClarification"]
+      }),
     ],
     devServer: {
       headers: {
