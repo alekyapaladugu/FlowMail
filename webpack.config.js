@@ -73,10 +73,6 @@ module.exports = async (env, options) => {
             from: "assets/*",
             to: "assets/[name][ext][query]",
           },
-          // {
-          //   from: "./src/email_forms/assignmentQuestion/assignmentQuestion.css",
-          //   to: "assignmentQuestion.css",
-          // },
           {
             from: "manifest*.xml",
             to: "[name]" + "[ext]",
@@ -97,8 +93,13 @@ module.exports = async (env, options) => {
       }),
       new HtmlWebpackPlugin({
         filename: "assignmentQuestion.html",
-        template: "./src/email_forms/assignmentQuestion/assignmentQuestion.html",
+        template: "./src/dialogs/taskpane_dialogs/assignmentQuestion.html",
         chunks: ["polyfill", "assignmentQuestion"]
+      }),
+      new HtmlWebpackPlugin({
+        filename: "confirmEmailDialog.html",
+        template: "./src/dialogs/commands_dialogs/confirmEmailDialog.html",
+        chunks: ["polyfill", "confirmEmailDialog"]
       }),
       new HtmlWebpackPlugin({
         filename: "assignmentQuestionTemplate.html",

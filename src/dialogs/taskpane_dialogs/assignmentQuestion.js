@@ -9,13 +9,6 @@
     $(document).ready(function () {
       templateId = getParameterByName("templateId");
       $("#assignment-extension-date").datepicker();
-      // Office.context.ui.addHandlerAsync(Office.EventType.DialogParentMessageReceived, function(arg) {
-      //   var messageFromTaskPane = JSON.parse(arg.message);
-      //   // Handle the received message
-      //   console.log("msg:" + messageFromTaskPane.template_id);
-      //   hideInputBasedOnTemplateId(messageFromTaskPane.template_id)
-      //   return { status: Office.AsyncResultStatus.Succeeded };
-      // });
       registerEvents();
       hideInputBasedOnTemplateId();
       populateProfessorsData();

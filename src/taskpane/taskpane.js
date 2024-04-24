@@ -30,7 +30,7 @@ function registerEvents() {
 }
 //Load Templates
 function loadTemplates() {
-  document.getElementById("template-list-container").style.display = "flex";
+  document.getElementById("template-list-container").style.display = "block";
 }
 
 
