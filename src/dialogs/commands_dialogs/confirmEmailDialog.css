@@ -1,3 +1,17 @@
-.confimation-email-block {
-    display: flex;
+main {
+    height: 100%;
+    padding: 20px;
+}
+#generated-mail {
+    height: 300px;
+    margin: 10px 0px;
+}
+#suggestions-received {
+    margin: 10px 0px;
+}
+.ms-Dialog-actionsRight {
+    text-align: center;
+}
+html {
+    background: beige;
 }

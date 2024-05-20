@@ -3,6 +3,7 @@
 
   var professorsData;
   var templateId;
+  var professorsInfo;
 
   // The Office initialize function must be run each time a new page is loaded.
   Office.initialize = function (reason) {
@@ -108,9 +109,11 @@
 
   function professorNameChange(event) {
     const selectedProfessor = event.target.value;
-
     if (selectedProfessor) {
       populateCourseNumbers(selectedProfessor);
+      professorsInfo = professorsData.filter((item) => {
+        return item.name === selectedProfessor
+      })
     } else {
       // Clear course numbers select if no professor is selected
       const courseNumbersSelect = document.getElementById("course-no");
@@ -147,6 +150,7 @@
   function validateForm() {
     let data = {};
     data.professorName = document.forms["assignment-template-form"]["professor-name"].value;
+    data.professorEmail = professorsInfo[0].email ? professorsInfo[0].email : ''
     data.courseNumber = document.forms["assignment-template-form"]["course-no"].value;
     data.assignmentName = document.forms["assignment-template-form"]["assignment-name"].value;
     data.assignmentQuestion = document.forms["assignment-template-form"]["assignment-question-content"].value;

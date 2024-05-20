@@ -28,17 +28,24 @@
 <body class="ms-font-l">
   <main>
     <section class="ms-font-m ms-fontColor-neutralPrimary">
+      
       <div class="confimation-email-block">
-        <div class="generated-email-block">
-            <h2>Generated Email (Is editable)</h2>
-        </div>
-        <div class="suggestion-email-block">
-            <h2>Suggestions:</h2>
-        </div>
+        <h2 class="ms-font-xxl">Generated Email with Suggestions</h2>
+        <form name="confirm-generated-mail-form" id="confirm-form" onsubmit="confirmForm()">
+          <textarea type="text" class="ms-TextField-field" id="generated-mail" onchange="getChangedEmail(event)"></textarea>
+          <div id="suggestions-received">
+          </div>
+          <div class="ms-Dialog-actions">
+            <div class="ms-Dialog-actionsRight">
+              <button type="submit" class="ms-Dialog-action ms-Button ms-Button--primary" for="confirm-form">
+                <span class="ms-Button-label">Okay</span>
+              </button>
+            </div>
+          </div>
+        </form>
       </div>
     </section>
   </main>
   <script type="text/javascript" src="./confirmEmailDialog.js"></script>
 </body>
-
 </html>

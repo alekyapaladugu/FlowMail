@@ -1,9 +1,3 @@
-/*
- * Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT license.
- * See LICENSE in the project root for license information.
- */
-
-/* global document, Office */
 var templateId = ""
 let settingsDialog;
 
@@ -54,6 +48,9 @@ function receiveMessage(dialogOutput) {
   let msg = JSON.parse(dialogOutput.message)
   populateTemplateBody(msg)
   let content = document.getElementById("template-content").innerHTML
+  Office.context.mailbox.item.to.setAsync([
+    msg.professorEmail
+  ])
   Office.context.mailbox.item.body.setSelectedDataAsync(content,
     {coercionType: Office.CoercionType.Html}, function(result) {
       if (result.status === Office.AsyncResultStatus.Failed) {
@@ -93,7 +90,7 @@ function populateTemplateBody(msg) {
   document.getElementById('professor-name').innerHTML = pname!==undefined ? pname : ''
   let courseNo = msg['courseNumber']
   document.getElementById('course-no').innerHTML = courseNo!==undefined ? courseNo : ''
-
+  
   if(templateId!=="template-3" && templateId!=="template-5") {
     let assignmentName = msg['assignmentName']
     document.getElementById('assignment-name').innerHTML = assignmentName!==undefined ? assignmentName : ''

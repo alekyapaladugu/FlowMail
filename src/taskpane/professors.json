@@ -2,75 +2,93 @@
     "professors": [
       {
         "name": "Mikaela Huang",
-        "courses": ["CSC 200"]
+        "courses": ["CSC 200"],
+        "email": "meinihuang@csus.edu"
       },
       {
         "name": "Bill Mitchell",
-        "courses": ["CSC 204"]
+        "courses": ["CSC 204"],
+        "email": "mitchell@csus.edu"
       },
       {
         "name": "Manish Gajjar",
-        "courses": ["CSC 205"]
+        "courses": ["CSC 205"],
+        "email": "m.gajjar@csus.edu"
       },
       {
         "name": "Parham Phoulady",
-        "courses": ["CSC 206", "CSC 502", "CSC 502C"]
+        "courses": ["CSC 206", "CSC 502", "CSC 502C"],
+        "email": "phoulady@csus.edu"
       },
       {
         "name": "Mamoun Abu-Samaha",
-        "courses": ["CSC 215", "CSC 252", "CSC 254"]
+        "courses": ["CSC 215", "CSC 252", "CSC 254"],
+        "email": "mamoun.abu-samaha@csus.edu"
       },
       {
         "name": "Anna Baynes",
-        "courses": ["CSC 238", "CSC 290", "CSC 502", "CSC 502C"]
+        "courses": ["CSC 238", "CSC 290", "CSC 502", "CSC 502C"],
+        "email": "shaverdian@csus.edu"
       },
       {
         "name": "Jagat Shah",
-        "courses": ["CSC 242"]
+        "courses": ["CSC 242"],
+        "email": "jagat.shah@csus.edu"
       },
       {
         "name": "Ying Jin",
-        "courses": ["CSC 290", "CSC 299", "CSC 502", "CSC 502C"]
+        "courses": ["CSC 290", "CSC 299", "CSC 502", "CSC 502C"],
+        "email": "jiny@csus.edu"
       },
       {
         "name": "Ahmed Salem",
-        "courses": ["CSC 290", "CSC 500C"]
+        "courses": ["CSC 290", "CSC 500C"],
+        "email": "asalem@csus.edu"
       },
       {
         "name": "Kin Chung Kwan",
-        "courses": ["CSC 290", "CSC 299", "CSC 502", "CSC 502C"]
+        "courses": ["CSC 290", "CSC 299", "CSC 502", "CSC 502C"],
+        "email": "kwan@csus.edu"
       },
       {
         "name": "Jinsong Ouyang",
-        "courses": ["CSC 295", "CSC 502", "CSC 502C"]
+        "courses": ["CSC 295", "CSC 502", "CSC 502C"],
+        "email": "jouyang@csus.edu"
       },
       {
         "name": "Haiquan Chen",
-        "courses": ["CSC 500C", "CSC 502", "CSC 502C"]
+        "courses": ["CSC 500C", "CSC 502", "CSC 502C"],
+        "email": "haiquan.chen@csus.edu"
       },
       {
         "name": "Syed Badruddoja",
-        "courses": ["CSC 502", "CSC 502C"]
+        "courses": ["CSC 502", "CSC 502C"],
+        "email": "badruddoja@csus.edu"
       },
       {
         "name": "Bang Tran",
-        "courses": ["CSC 290", "CSC 502", "CSC 502C"]
+        "courses": ["CSC 290", "CSC 502", "CSC 502C"],
+        "email": "s.tran@csus.edu"
       },
       {
         "name": "Ted Krovetz",
-        "courses": ["CSC 290", "CSC 502", "CSC 502C"]
+        "courses": ["CSC 290", "CSC 502", "CSC 502C"],
+        "email": "tdk@csus.edu"
       },
       {
         "name": "Mahyar Zarghami",
-        "courses": ["CSC 299"]
+        "courses": ["CSC 299"],
+        "email": "mahyar.zarghami@csus.edu"
       },
       {
         "name": "Ghassan Shobaki",
-        "courses": ["CSC 502"]
+        "courses": ["CSC 502"],
+        "email": "ghassan.shobaki@csus.edu"
       },
       {
         "name": "Scott Gordon",
-        "courses": ["CSC 502C"]
+        "courses": ["CSC 502C"],
+        "email": "gordonvs@csus.edu"
       }
     ]
   }

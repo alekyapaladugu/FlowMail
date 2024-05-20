@@ -5,10 +5,12 @@
 
 /* global global, Office, self, window */
 const { default: axios } = require("axios");
-const {OpenAI} = require("openai");
 let settingsDialog;
+let mail;
+let suggestions;
+let subject;
 
-Office.onReady(() => {
+Office.onReady(() => {s
   // If needed, Office.js is ready to be called
 });
 
@@ -17,8 +19,7 @@ Office.onReady(() => {
  * @param event {Office.AddinCommands.Event}
  */
 function action(event) {
-  getSelectedText().then(function (selectedText) {
-    Office.context.mailbox.item.setSelectedDataAsync(selectedText, { coercionType: Office.CoercionType.Text });
+  getSelectedText().then(function () {
     event.completed();
   });
 }
@@ -30,10 +31,8 @@ function getSelectedText() {
         const text = asyncResult.value;
         // Call the API function to generate mail
         try {
-          const generatedMail = await generateMail(text);
-          // const confirmedMail = openDialog();
-          // resolve(confirmedMail);
-          resolve(generatedMail);
+          await generateMail(text);
+          openDialog();
         } catch (error) {
           reject(error);
         }
@@ -53,20 +52,21 @@ async function generateMail(text) {
     {
       headers: {
           'Content-Type': 'application/json',
-          "Access-Control-Allow-Origin": "*",
+          'Access-Control-Allow-Origin': '*',
       }
     });
     
     console.log(response.data);
     if(response.data[0] !== undefined) {
-      localStorage.setItem('Email', response.data[0]["mail"])
-      localStorage.setItem('Suggestions', response.data[0]["suggestions"])
-      return response.data[0]["mail"]
+      mail = response.data[0]["mail"]
+      suggestions = response.data[0]["suggestions"]
     } else {
-      localStorage.setItem('Email', response.data["mail"])
-      localStorage.setItem('Suggestions', response.data["suggestions"])
-      return response.data["mail"]
+      mail = response.data["mail"]
+      suggestions = response.data["suggestions"]
+      subject = response.data["subject"]
     }
+  
+    suggestions = suggestions.replace(/\n/g, '<br>')
 
   } catch(error) {
     console.log(error)
@@ -91,16 +91,39 @@ g.action = action;
 
 function openDialog() {
   let url = new URI('confirmEmailDialog.html').absoluteTo(window.location).toString();
-  const dialogOptions = { width: 80, height: 80, displayInIframe: true };
+  const dialogOptions = { width: 60, height: 60, displayInIframe: true };
 
   Office.context.ui.displayDialogAsync(url, dialogOptions, function (result) {
     settingsDialog = result.value;
-    settingsDialog.addEventHandler(Office.EventType.DialogMessageReceived, receiveMessage);
-    // settingsDialog.addEventHandler(Office.EventType.DialogEventReceived, dialogClosed);
+    settingsDialog.addEventHandler(Office.EventType.DialogMessageReceived, (arg) =>{
+      if (arg.message === "IAmReady"){
+        if (Office.context.requirements.isSetSupported('DialogApi', '1.2')) {
+          settingsDialog.messageChild(JSON.stringify({
+            "mail": mail,
+            "suggestions": suggestions
+          }), { targetOrigin: url });
+        }
+      }
+      if (arg.message !== "IAmReady"){
+        receiveMessage(arg.message)
+      }
+    });
   });
 }
 
 function receiveMessage(message) {
+  Office.context.mailbox.item.subject.setAsync(subject,
+    (asyncResult) => {
+        if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+            console.log(asyncResult.error.message);
+            return;
+        }
+    });
+  Office.context.mailbox.item.body.setAsync(message,
+    {coercionType: Office.CoercionType.Html}, function(result) {
+      if (result.status === Office.AsyncResultStatus.Failed) {
+        showError('Could not insert email: ' + result.error.message);
+      }
+  });
   settingsDialog.close()
-  return message
 }
