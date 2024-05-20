@@ -38,9 +38,7 @@ function insertTemplateToBody() {
   const dialogOptions = { width: 35, height: 50, displayInIframe: true, promptBeforeOpen: false };
   Office.context.ui.displayDialogAsync(url, dialogOptions, function (result) {
     settingsDialog = result.value;
-    // settingsDialog.messageChild(JSON.stringify({template_id: templateId}))
-    settingsDialog.addEventHandler(Office.EventType.DialogMessageReceived, receiveMessage);
-    // settingsDialog.addEventHandler(Office.EventType.DialogEventReceived, dialogClosed);
+    settingsDialog.addEventHandler(Office.EventType.DialogMessageReceived, receiveMessage)
   });
 }
 

@@ -30,14 +30,7 @@
   function registerEvents() {
     console.log('inside register')
     document.getElementById("confirm-form").onsubmit = confirmForm;
-    // let generatedMail = JSON.parse(localStorage.getItem("Email"))
-    // console.log(generatedMail)
-    // // let suggestions = JSON.parse(localStorage.getItem("suggestions"))
-    // let generatedMailInput = document.getElementById("generated-mail")
-    // let suggestionsInput = document.getElementById("suggestions-received")
     document.getElementById("generated-mail").onchange = getChangedEmail;
-    // generatedMailInput.value = "mail"
-    // suggestionsInput.innerHTML = "suggestions"
   }
 
   function confirmForm() {
