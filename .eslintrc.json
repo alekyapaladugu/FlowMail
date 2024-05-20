@@ -4,5 +4,6 @@
   ],
   "extends": [
     "plugin:office-addins/recommended"
-  ]
+  ],
+  "project": ["/tsconfig.json", "e2e/tsconfig.json"]
 }
