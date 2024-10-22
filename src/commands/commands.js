@@ -55,8 +55,6 @@ async function generateMail(text) {
           'Access-Control-Allow-Origin': '*',
       }
     });
-    
-    console.log(response.data);
     if(response.data[0] !== undefined) {
       mail = response.data[0]["mail"]
       suggestions = response.data[0]["suggestions"]
